@@ -6,8 +6,13 @@ function App() {
   let [counterValue, setCounterValue] = useState(1);
 
   let countInc = () => {
-    counterValue++;
-    setCounterValue(counterValue);
+    // setCounterValue(counterValue+1);
+    // setCounterValue(counterValue+1);
+    // setCounterValue(counterValue+1);
+    // setCounterValue(counterValue+1);
+    setCounterValue(prevCount => prevCount+1);
+    setCounterValue(prevCount => prevCount+1);
+    
   };
   let countDec = () => {
     if (counterValue >  0)   counterValue--;
@@ -17,7 +22,7 @@ function App() {
   return (
     <>
       <h1>Counter: {counterValue}</h1>
-      <button onClick={countInc}>Increase {counterValue}</button>
+      <button className="btn" onClick={countInc}>Increase {counterValue}</button>
 
       <button onClick={countDec}>Decrease {counterValue}</button>
       <p>Counter is set to  {counterValue}</p>
